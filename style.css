@@ -17,7 +17,7 @@
    text-align: center;
 }
 #card p {
-   font-size: 1.5em;
+   font-size: 20px;
    text-align: justify;
    padding-left: 30px; /* Espacio en blanco a la izquierda */
    padding-right: 30px; /* Espacio en blanco a la derecha */
@@ -26,7 +26,7 @@
 
 .side {
    background:#eee;
-   height:550px;
+   height:850px;
    width:400px;
 /*    border:1px solid red; */
    padding:10px;
@@ -48,7 +48,7 @@ body {
    height: 100vh;
    font-family: 'Sacramento', cursive;
    background-color: #f1e3d3;
-
+   overflow: hidden;
  }
  
  .valentines-day {
@@ -152,7 +152,7 @@ body {
  .text {
    position: absolute;
    font-family: arial;
-   letter-spacing:5px;
+   letter-spacing:1px;
    text-align: center;
    color: white;
    z-index:2;
@@ -169,7 +169,63 @@ body {
    transform: translateY(-50px);
  }
  
- 
+ @media (max-width: 768px) {
+  #card {
+    flex-direction: column;
+    position: relative;
+    width: 95%;
+    height: auto;
+    margin: 2em auto;
+    left: 0;
+    top: 0;
+    transform: none;
+  }
+
+  .side {
+    width: 100%;
+    height: auto;
+    transform: none !important;
+    padding: 20px;
+  }
+
+  .side.one,
+  .side.two {
+    background: #fff;
+  }
+
+  #card h2 {
+    font-size: 2em;
+  }
+
+  #card p {
+    font-size: 18px;
+    padding: 0 15px 20px;
+  }
+
+  body {
+    flex-direction: column;
+    overflow: auto;
+    height: auto;
+    padding: 1em 0;
+  }
+
+  .envelope,
+  .heart,
+  .front,
+  .envelope:before,
+  .envelope:after,
+  .front:before,
+  .front:after {
+    transform: scale(0.8);
+  }
+
+  .text {
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+    top: 60px;
+  }
+}
+
 
 
 
