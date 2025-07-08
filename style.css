@@ -1,74 +1,67 @@
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 
+#card {
+   height:500px;
+   width:800px;
+   margin:5em auto;
+   position: fixed;
+  top: -15px;
+   left: 25%;
+   display:flex;
+   visibility:hidden;
+}
+#card h2 {
+   font-size:3em;
+   margin:0;
+   color:pink;
+   text-align: center;
+}
+#card p {
+   font-size: 1.5em;
+   text-align: justify;
+   padding-left: 30px; /* Espacio en blanco a la izquierda */
+   padding-right: 30px; /* Espacio en blanco a la derecha */
+}
+
+
+.side {
+   background:#eee;
+   height:550px;
+   width:400px;
+/*    border:1px solid red; */
+   padding:10px;
+}
+.side.one {
+   width:320px;
+   transform:skew(10deg,20deg);
+   background:linear-gradient(90deg, #fff, #fff 40%, #ddd);
+}
+.side.two {
+   transform:skew(10deg,-15deg);
+   background:linear-gradient(-90deg, #fff, #fff 40%, #f0f0f0);
+}
+
 body {
    display: flex;
    align-items: center;
    justify-content: center;
-   min-height: 100vh;
+   height: 100vh;
    font-family: 'Sacramento', cursive;
    background-color: #f1e3d3;
-   margin: 0;
-   padding: 1em;
-}
 
-#card {
-   max-width: 800px;
-   width: 100%;
-   margin: 2em auto;
-   position: relative;
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   background-color: #fff;
-   border-radius: 12px;
-   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-   overflow: hidden;
-   visibility: visible;
-}
-
-#card h2 {
-   font-size: 2.5em;
-   margin: 0.5em auto 0;
-   color: #e91e63;
-   text-align: center;
-   width: 100%;
-}
-
-#card p {
-   font-size: 1.2em;
-   text-align: justify;
-   padding: 0 20px 1em;
-   word-break: break-word;
-   line-height: 1.5;
-}
-
-.side {
-   flex: 1 1 300px;
-   background: #eee;
-   padding: 1em;
-   box-sizing: border-box;
-   min-width: 280px;
-}
-
-.side.one {
-   background: linear-gradient(90deg, #fff, #fff 40%, #ddd);
-}
-
-.side.two {
-   background: linear-gradient(-90deg, #fff, #fff 40%, #f0f0f0);
-}
-
-.valentines-day {
+ }
+ 
+ .valentines-day {
    position: relative;
    cursor: pointer;
-}
-
-.envelope {
+ }
+ 
+ .envelope {
    position: relative;
    filter: drop-shadow(0 0 25px rgba(0,0,0,.3));
-}
-
-.envelope:before {
+ }
+ 
+ .envelope:before {
    content:"";
    position: absolute;
    width:254px;
@@ -78,9 +71,9 @@ body {
    border-radius: 0 15px 0 0;
    left:-37px;
    top:-82px;
-}
-
-.envelope:after {
+ }
+ 
+ .envelope:after {
    content:"";
    position: absolute;
    background-color: #ff9494;
@@ -88,9 +81,9 @@ body {
    height:225px;
    left:-90px;
    top:45px;
-}
-
-.heart {
+ }
+ 
+ .heart {
    position: relative;
    background-color: #e01911;
    display: inline-block;
@@ -101,28 +94,26 @@ body {
    width:180px;
    filter: drop-shadow(0 -10px 25px rgba(0,0,0,.3));
    transition: .5s;
-}
-
-.heart:before, .heart:after {
+ }
+   
+ .heart:before, .heart:after {
    content:"";
    background-color: #e01911;
    border-radius:50%;
    height: 180px;
    width: 180px;
    position: absolute;
-}
-
-.heart:before {
+   }
+   
+ .heart:before {
    top:-100px;
-   left:0;
-}
-
-.heart:after {
+   left:0;}
+   
+ .heart:after {
    left:100px;
-   top:0;
-}
-
-.front {
+   top:0;}
+ 
+ .front {
    position: absolute;
    width:0;
    height:0;
@@ -132,9 +123,9 @@ body {
    top:44px;
    left:80px;
    z-index:4;
-}
-
-.front:before {
+ }
+ 
+ .front:before {
    content:"";
    position: absolute;
    width:0;
@@ -144,9 +135,9 @@ body {
    border-bottom: 113px solid transparent;
    top:-113px;
    left:-170px;
-}
-
-.front:after {
+ }
+ 
+ .front:after {
    width:0;
    height:0;
    position: absolute;
@@ -156,50 +147,30 @@ body {
    border-left: 180px solid transparent;
    top:-36px;
    left:-170px;
-}
-
-.text {
+ }
+ 
+ .text {
    position: absolute;
-   font-family: Arial, sans-serif;
-   letter-spacing: 2px;
+   font-family: arial;
+   letter-spacing:5px;
    text-align: center;
    color: white;
-   z-index: 2;
-   top: 80px;
-   left: 15px;
+   z-index:2;
+   top:80px;
+   left:15px;
    transition: .5s;
-}
-
-.valentines-day:hover .heart {
+ }
+ 
+ .valentines-day:hover .heart {
    transform: translateY(-50px) rotate(-45deg);
-}
-
-.valentines-day:hover .text {
+ }
+ 
+ .valentines-day:hover .text {
    transform: translateY(-50px);
-}
+ }
+ 
+ 
 
-/* Responsive */
-@media (max-width: 768px) {
-   #card {
-      flex-direction: column;
-      padding: 1em;
-   }
 
-   #card h2 {
-      font-size: 2em;
-   }
 
-   #card p {
-      font-size: 1em;
-      padding: 0 1em 1em;
-   }
-
-   .side {
-      width: 100%;
-      transform: none !important;
-   }
-
-   .front, .front:before, .front:after {
-      display: none;
-   }
-}
+ 
